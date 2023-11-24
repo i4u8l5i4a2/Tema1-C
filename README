@@ -1,0 +1,55 @@
+Problema 1 - Cutii
+	Prima problema mi-a luat circa 3 ore, folosesc 2 subprograme.
+	In DESCHIDERE contorizam de cate cutii este nevoie sa fie deschise ca sa ne 
+intoarcem la numarul primeia adica i = v[k] adevarat => verificam daca am 
+deschis mai putin sau egal de n/2 cutii, daca sunt mai multe returnam 0,
+daca sunt mai putine sau egale returnam 1. Subprogramul functioneaza ca o 
+functie de bool care verifica conditia pt care ar trai puscariasii.
+	In SIRURI, generam sirurile, vom altera vectorul, pentru a genera sirusile
+plecam de prima pozitie si incarcam variabila inceput cu i,
+apoi incarcam nr cu numarul din cutia de pe pozitia i, iar cutia se va goli, 
+adica devine 0if-ul este redundant pentru primul sir, dar foarte util pt al doilea;
+golind cutiile nu o sa mai trecem peste ce am verificat deja si o sa ne ducem acolo 
+unde nu au fost verificate astfel ca dupa primul sir, ni se vor goli cateva cutii, 
+iar al doilea sir va incepe cu prima cutie cu numar ce nu a fost inca deschisa, aceasta
+este utilizarea if-ului.
+	In MAIN realizam citirea, verificam cu ajutorul subprogramului DESCHIDERE daca puscariasii
+pot castiga, iar daca da apelam SIRURI, pentru generarea sirurilor.
+
+Problema 2 - Lungi
+	Timpul de realizare al codului este de circa 4-5 ore.
+	In main realizez citirea si apelez subprogramele de ADUNARE si SCADERE dupa semnele date.
+	In ADUNARE, transform partea reala a fiecarui sir intr-un numar , luand caracter cu caracter
+generand un numar, de asemenea tin cont de semn, adaugandu-l numarului dupa ce il generez. Pentru
+partea imaginara procedez la fel, asemenea tinand cont de semn. Adun partile reale si partile imaginare
+si generez noul sir ce reprezinta un numar complex, tinand cont de semenul partii reale si imaginare.
+	In SCADERE, transform partea reala a fiecarui sir intr-un numar , luand caracter cu caracter
+generand un numar, de asemenea tin cont de semn, adaugandu-l numarului dupa ce il generez. Pentru
+partea imaginara procedez la fel, asemenea tinand cont de semn. Scad partile reale si partile imaginare
+si generez noul sir ce reprezinta un numar complex, tinand cont de semenul partii reale si imaginare.
+
+Problema 3 - Codificare
+	Codul a fost scris in aproximativ o zi, implementarea fiind destul de greuta.
+	In MAIN realizez citirea sirului si respectiv a codificarilor/ decodificarilor pana la STOP.
+Utilizez 4 subprograme, 2 de codificare , CodificareA si CodificareB, si 2 de decodificare, 
+DecodificareA si DecodificareB.
+	In CodificareA, implementez cerinta, pe linia cu numarul 0 adaug cheia, dupa care adaug in matrice
+pe un numar determinat de linii caracterele sirului. Apoi sortez alfabetic prima linie si mut coloanele intr-o
+matrice auxiliara. Noul sir il obtin din matricea auxiliara.
+	In DecodificareA, realizez procesul invers de la CodificareA. Pun pe linia 0 cheia sortata, dupa care pe 
+restul liniilor adaug caracter cu caracter elementele sirului pe un numar determinat de linii. Verific care 
+e coloana corespunzatoare caracterelor in ordinea normala a cheii si le pun intr-o matrice auxiliara.
+Matricea auxiliara o folosesc sa generez noul sir.
+	In CodificareB ma folosesc de un sir auxiliar ca sa codific sirul, inceputul lui il incarc cu
+ultimele n caractere pe care le codific corespunzator. Primele strlen(sir) - n caractere le pun la finalul lui aux.
+	In DecodificareB realizez procesul invers, pun intr-un sir auxiliar caracterele de la n pana la strlen(sir), 
+decodific primele n caractere si le adaug la finalul lui aux.
+
+Problema 4 - Masini
+	Aceasta problema mi-a luat circa 5 ore sa o realizez.
+	In main este citirea si apelarea subprogramelor.
+	In C_A contorizez masinile dupa combustibil, iar afisarea se face in main.
+	In C_B mai aloc dinamic o variabila pentru a o incarca cu brand-uri, iar acestea sa nu se repete.
+Astfel pentru fiecare brand unic calculez consumul si pretul carburantului dupa masinile citite de la tastatura.
+	In C_C verific numere de inmatriculare valide/invalide. Verific sa existe numere de forma : { o litera, 
+2 cifre, 3 litere}, {o litera, 3 cifre, 3 litere}, {2 litere, 2 cifre, 3 litere} sau {2 litere, 3 cifre, 3 litere}.
